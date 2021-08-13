@@ -1,5 +1,5 @@
 import { AddResidentModel } from "../protocols/models/resident-models";
-import { AddResidentRepository } from "../protocols/repository/add-resident-repository";
+import { AddResidentRepository } from "../protocols/repository/resident-repository";
 import { Controller } from "../protocols/protocol-controller";
 
 export class AddResidentController implements Controller  {
@@ -9,7 +9,7 @@ export class AddResidentController implements Controller  {
         this.addResidentRepository = addResidentRepository
     }
     async handle(resident: AddResidentModel) {
-    //   :  throw new Error()
+        //Validação do Email
       const response = await  this.addResidentRepository.create(resident)
         return  response
     }

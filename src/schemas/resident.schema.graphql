@@ -1,0 +1,27 @@
+type Query {
+  someQuery(id: ID!): Resident
+}
+
+type Resident {
+  id: ID!
+  name: String!
+  email: String!
+  isUser: Boolean!
+  income: Float!
+}
+
+type Mutation {
+  createResident(
+    name: String!
+    email: String!
+    isUser: Boolean!
+    income: Float!
+  ): Resident
+  updateResident(
+    id: ID!
+    name: String!
+    email: String!
+    isUser: Boolean!
+    income: Float!
+  ): Resident
+}

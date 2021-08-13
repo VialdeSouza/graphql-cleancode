@@ -5,6 +5,8 @@ export interface AddResidentModel {
     income: number
 }
 
+
+
 export interface ResidentModel {
     id: string
     name: string
