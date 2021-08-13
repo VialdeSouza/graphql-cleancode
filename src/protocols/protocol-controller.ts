@@ -1,3 +1,3 @@
 export interface Controller {
-    handle (): Promise<{}> 
+    handle (values: any): Promise<any> 
 }

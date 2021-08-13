@@ -3,15 +3,14 @@ import { AddResidentRepository } from "../protocols/repository/add-resident-repo
 import { Controller } from "../protocols/protocol-controller";
 
 export class AddResidentController implements Controller  {
-    private readonly resident: AddResidentModel
     private readonly addResidentRepository: AddResidentRepository
 
-    constructor( resident: AddResidentModel, addResidentRepository: AddResidentRepository) {
-        this.resident = resident
+    constructor(addResidentRepository: AddResidentRepository) {
         this.addResidentRepository = addResidentRepository
     }
-    async handle() {
-      const response = await  this.addResidentRepository.create(this.resident)
+    async handle(resident: AddResidentModel) {
+    //   :  throw new Error()
+      const response = await  this.addResidentRepository.create(resident)
         return  response
     }
 }
