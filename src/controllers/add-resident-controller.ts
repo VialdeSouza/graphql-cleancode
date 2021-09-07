@@ -10,7 +10,7 @@ export class AddResidentController implements Controller  {
     }
     async handle(resident: AddResidentModel) {
         //Validação do Email
-      const response = await  this.addResidentRepository.create(resident)
+        const response = await  this.addResidentRepository.create(resident)
         return  response
     }
 }

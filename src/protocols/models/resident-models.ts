@@ -3,6 +3,7 @@ export interface AddResidentModel {
     email: string
     isUser: boolean
     income: number
+    idHouse: string
 }
 
 
