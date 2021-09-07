@@ -7,3 +7,7 @@ export interface AddResidentRepository {
 export interface EditResidentRepository {
     change(resident: ResidentModel): Promise<ResidentModel>
 }
+
+export interface QueryByIDResidentRepository {
+    queryById(id: String): Promise<ResidentModel>
+}

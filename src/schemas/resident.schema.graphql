@@ -1,5 +1,5 @@
 type Query {
-  someQuery(id: ID!): Resident
+  queryByID(id: ID!): Resident
 }
 
 type Resident {
@@ -8,6 +8,7 @@ type Resident {
   email: String!
   isUser: Boolean!
   income: Float!
+  idHouse: String!
 }
 
 type Mutation {
@@ -16,12 +17,15 @@ type Mutation {
     email: String!
     isUser: Boolean!
     income: Float!
+    idHouse: String!
   ): Resident
+
   updateResident(
     id: ID!
     name: String!
     email: String!
     isUser: Boolean!
     income: Float!
+    idHouse: String!
   ): Resident
 }
