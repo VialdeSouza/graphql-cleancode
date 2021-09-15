@@ -1,0 +1,15 @@
+type Query {
+  queryByID(keyAccess: String!): House
+}
+
+type House {
+  id: ID!
+  keyAccess: String!
+  nickname: String!
+}
+
+type Mutation {
+  createHouse(
+    nickname: String!
+  ): House
+}
