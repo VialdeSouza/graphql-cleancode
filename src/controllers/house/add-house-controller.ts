@@ -1,7 +1,7 @@
 import { Controller } from "../../protocols/protocol-controller";
 import { AddHouseRepository } from "@/protocols/repository/house-repository";
 
-export class AddResidentController implements Controller  {
+export class AddHouseController implements Controller  {
     private readonly addHouseRepository: AddHouseRepository
 
     constructor(addHouseRepository: AddHouseRepository) {

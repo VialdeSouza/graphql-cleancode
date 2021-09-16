@@ -7,6 +7,6 @@ export interface AddHouseRepository {
 
 
 
-export interface QueryByIDResidentRepository {
-    queryById(keyAccess: String): Promise<HouseModel>
+export interface QueryHouseRepository {
+    queryByKey(keyAccess: String): Promise<HouseModel>
 }
