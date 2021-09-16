@@ -4,7 +4,7 @@ import path from 'path'
 
 
 const server = new GraphQLServer({
-    typeDefs: path.resolve(__dirname, 'schemas/resident.schema.graphql'), 
+    typeDefs: path.resolve(__dirname, 'schemas/schema.graphql'), 
     resolvers
 })
 server.start()

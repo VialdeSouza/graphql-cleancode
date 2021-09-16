@@ -1,5 +1,6 @@
 type Query {
   queryByID(id: ID!): Resident
+  queryHouseByKey(keyAccess: String!): House
 }
 
 type Resident {
@@ -9,6 +10,12 @@ type Resident {
   isUser: Boolean!
   income: Float!
   idHouse: String!
+}
+
+type House {
+  id: ID!
+  keyAccess: String!
+  nickname: String!
 }
 
 type Mutation {
@@ -28,4 +35,6 @@ type Mutation {
     income: Float!
     idHouse: String!
   ): Resident
+
+  createHouse(nickname: String!): House
 }
