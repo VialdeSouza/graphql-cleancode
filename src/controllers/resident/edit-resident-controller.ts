@@ -1,7 +1,7 @@
 import {  ResidentModel } from "../../protocols/models/resident-models";
 import { EditResidentRepository } from "../../protocols/repository/resident-repository";
 import { Controller } from "../../protocols/protocol-controller";
-
+import validator from "validator";
 export class EditResidentController implements Controller  {
     private readonly editResidentRepository: EditResidentRepository
 
@@ -9,8 +9,9 @@ export class EditResidentController implements Controller  {
         this.editResidentRepository = residentRepository
     }
     async handle(resident: ResidentModel) {
-        //Validação do Email
-      const response = await this.editResidentRepository.change(resident)
+        const isEmail = validator.isEmail(resident.email);
+        if(!isEmail) throw new Error('Email inválido');
+              const response = await this.editResidentRepository.change(resident)
         return  response
     }
 }
