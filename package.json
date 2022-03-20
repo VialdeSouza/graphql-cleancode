@@ -9,10 +9,12 @@
   },
   "dependencies": {
     "graphql-yoga": "^1.18.3",
-    "mongoose": "^5.12.14"
+    "mongoose": "^5.12.14",
+    "validator": "^13.7.0"
   },
   "devDependencies": {
     "@types/node": "^16.0.0",
+    "@types/validator": "^13.7.1",
     "typescript": "^4.3.5"
   }
 }
