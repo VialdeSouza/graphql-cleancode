@@ -1,16 +1,24 @@
 import { Controller } from "../../protocols/protocol-controller";
 import { AddHouseRepository } from "@/protocols/repository/house-repository";
+import { generateKeyAccess } from "../../utils/generate-key-access";
 
-export class AddHouseController implements Controller  {
-    private readonly addHouseRepository: AddHouseRepository
+export class AddHouseController implements Controller {
+  private readonly addHouseRepository: AddHouseRepository;
 
-    constructor(addHouseRepository: AddHouseRepository) {
-        this.addHouseRepository = addHouseRepository
+  constructor(addHouseRepository: AddHouseRepository) {
+    this.addHouseRepository = addHouseRepository;
+  }
+  async handle(nickname: string) {
+    const keyAccess = generateKeyAccess();
+
+    if (nickname === "" || nickname === null || nickname === undefined) {
+      throw new Error("Nickname não pode ser uma string vazia");
     }
-    async handle(nickname: string) {
-        //gerar key
-        const keyAccess = 'HMK090'
-        const response = await  this.addHouseRepository.create({nickname, keyAccess})
-        return  response
-    }
+
+    const response = await this.addHouseRepository.create({
+      nickname,
+      keyAccess,
+    });
+    return response;
+  }
 }

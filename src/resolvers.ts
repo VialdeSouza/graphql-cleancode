@@ -1,9 +1,9 @@
 import { adaptResolver } from './adapters/adapter-resolver';
 import { AddResidentModel } from './protocols/models/resident-models';
-import { AddResidentController } from './controllers/add-resident-controller';
+import { AddResidentController } from './controllers/resident/add-resident-controller';
 import ResidentRepository from './repository/resident-repository';
-import { EditResidentController } from './controllers/edit-resident-controller';
-import { QueryResidentController } from './controllers/query-resident-controller';
+import { EditResidentController } from './controllers/resident/edit-resident-controller';
+import { QueryResidentController } from './controllers/resident/query-resident-controller';
 import { AddHouseController } from './controllers/house/add-house-controller';
 import HouseRepository from './repository/house-repository';
 import { QueryHouseController } from './controllers/house/query-house-controller';

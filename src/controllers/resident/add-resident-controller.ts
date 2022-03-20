@@ -1,6 +1,6 @@
-import { AddResidentModel } from "../protocols/models/resident-models";
-import { AddResidentRepository } from "../protocols/repository/resident-repository";
-import { Controller } from "../protocols/protocol-controller";
+import { AddResidentModel } from "../../protocols/models/resident-models";
+import { AddResidentRepository } from "../../protocols/repository/resident-repository";
+import { Controller } from "../../protocols/protocol-controller";
 
 export class AddResidentController implements Controller  {
     private readonly addResidentRepository: AddResidentRepository

@@ -1,6 +1,6 @@
-import {  ResidentModel } from "../protocols/models/resident-models";
-import { EditResidentRepository } from "../protocols/repository/resident-repository";
-import { Controller } from "../protocols/protocol-controller";
+import {  ResidentModel } from "../../protocols/models/resident-models";
+import { EditResidentRepository } from "../../protocols/repository/resident-repository";
+import { Controller } from "../../protocols/protocol-controller";
 
 export class EditResidentController implements Controller  {
     private readonly editResidentRepository: EditResidentRepository
