@@ -42,7 +42,7 @@ export default class ResidentRepository
         {
           id: "any",
           email: "anyemail@gmail.com",
-          income: 6000.0,
+          income: 3000.0,
           isUser: true,
           name: "Tamyres Vial de Souza",
         },

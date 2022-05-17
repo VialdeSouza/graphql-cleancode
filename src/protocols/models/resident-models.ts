@@ -15,3 +15,8 @@ export interface ResidentModel {
     isUser: boolean
     income: number
 }
+
+export interface ResidentQuote extends ResidentModel {
+    incomePercentage: number
+    budgetValue: number
+}

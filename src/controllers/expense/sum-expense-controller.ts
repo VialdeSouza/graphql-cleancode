@@ -4,7 +4,7 @@ import { QueryExpenseRepository } from "@/protocols/repository/expense-repositor
 import { Controller } from "../../protocols/protocol-controller";
 
 
-export class sumExpenseController implements Controller {
+export class SumExpenseController implements Controller {
   private readonly queryExpenseRepository: QueryExpenseRepository;
 
   constructor(queryExpenseRepository: QueryExpenseRepository) {
