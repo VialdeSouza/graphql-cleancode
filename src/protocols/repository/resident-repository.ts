@@ -11,3 +11,8 @@ export interface EditResidentRepository {
 export interface QueryByIDResidentRepository {
     queryById(id: String): Promise<ResidentModel>
 }
+
+export interface QueryAllResidentsRepository {
+    list(idHouse: String): Promise<ResidentModel[]>
+}
+

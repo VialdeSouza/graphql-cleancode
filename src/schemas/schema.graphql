@@ -1,6 +1,7 @@
 type Query {
   queryByID(id: ID!): Resident
   queryHouseByKey(keyAccess: String!): House
+  listResidentsByIdHouse(idHouse: String!): [SummaryResident!]!
 }
 
 type Resident {
@@ -10,6 +11,16 @@ type Resident {
   isUser: Boolean!
   income: Float!
   idHouse: String!
+}
+
+type SummaryResident {
+  id: ID!
+  name: String!
+  email: String!
+  isUser: Boolean!
+  income: Float!
+  idHouse: String!
+  budgetPercentage: Float!
 }
 
 type House {
