@@ -2,15 +2,16 @@ export interface AddExpense {
     tag: string
     value: number
     description: string
-    date: Date 
+    date: string 
     idHouse: string
 }
 
 export interface Expense {
+    idExpense: string,
     tag: string
     value: number
     description: string
-    date: Date 
+    date: string 
     idHouse: string
     createAt: Date
 }

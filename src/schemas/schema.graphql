@@ -30,6 +30,16 @@ type House {
   nickname: String!
 }
 
+type Expense {
+  tag: String!
+  value: Float!
+  description: String!
+  date: String!
+  idHouse: String!
+  idExpense: String!
+  createAt: String!
+}
+
 type Mutation {
   createResident(
     name: String!
@@ -49,4 +59,12 @@ type Mutation {
   ): Resident
 
   createHouse(nickname: String!): House
+
+  createExpense(
+    tag: String!
+    value: Float!
+    description: String!
+    date: String!
+    idHouse: String!
+  ): Expense
 }

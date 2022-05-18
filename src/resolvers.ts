@@ -10,6 +10,8 @@ import { QueryHouseController } from './controllers/house/query-house-controller
 import { QueryAllResidentsController } from './controllers/resident/query-all-resident-controller';
 import { SumExpenseController } from './controllers/expense/sum-expense-controller';
 import ExpenseRepository from './repository/expense-repository';
+import { AddExpenseController } from './controllers/expense/add-expense-controller';
+import { AddExpense } from './protocols/models/expense-model';
 
 
 
@@ -20,7 +22,8 @@ const queryResidentController = new QueryResidentController(new ResidentReposito
 const addHouseController = new AddHouseController(new HouseRepository())
 const queryHouseController = new QueryHouseController(new HouseRepository())
 const sumExpenseController = new SumExpenseController(new ExpenseRepository())
-const listResidentsByIdHouse = new QueryAllResidentsController(new ResidentRepository(), sumExpenseController);
+const listResidentsByIdHouse = new QueryAllResidentsController(new ResidentRepository(), sumExpenseController)
+const addExpenseController = new AddExpenseController(new ExpenseRepository())
 
 
 export const resolvers = {               
@@ -32,7 +35,8 @@ export const resolvers = {
   Mutation: {
     createResident: async (_, values: AddResidentModel ) => adaptResolver(addResidentController, values),
     updateResident: async (_, values: AddResidentModel ) => adaptResolver(editResidentController, values),
-    createHouse: async(_, {nickname}) => adaptResolver(addHouseController, nickname)
+    createHouse: async(_, {nickname}) => adaptResolver(addHouseController, nickname),
+    createExpense:async(_, values: AddExpense )  => adaptResolver(addExpenseController, values)
   },
 
 
