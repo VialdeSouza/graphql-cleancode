@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "graphql-yoga": "^1.18.3",
+    "moment": "^2.29.3",
     "mongoose": "^5.12.14",
     "validator": "^13.7.0"
   },
