@@ -12,6 +12,7 @@ import { SumExpenseController } from './controllers/expense/sum-expense-controll
 import ExpenseRepository from './repository/expense-repository';
 import { AddExpenseController } from './controllers/expense/add-expense-controller';
 import { AddExpense } from './protocols/models/expense-model';
+import { AdaptDateValidator } from './adapters/adapter-date-validator';
 
 
 
@@ -23,7 +24,7 @@ const addHouseController = new AddHouseController(new HouseRepository())
 const queryHouseController = new QueryHouseController(new HouseRepository())
 const sumExpenseController = new SumExpenseController(new ExpenseRepository())
 const listResidentsByIdHouse = new QueryAllResidentsController(new ResidentRepository(), sumExpenseController)
-const addExpenseController = new AddExpenseController(new ExpenseRepository())
+const addExpenseController = new AddExpenseController(new ExpenseRepository(), new AdaptDateValidator())
 
 
 export const resolvers = {               
