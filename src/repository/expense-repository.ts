@@ -12,6 +12,7 @@ export default class ExpenseRepository
     startAt: string,
     finishAt: string
   ): Promise<Expense[]> {
+    console.log(startAt, finishAt)
     return [
       {
         idExpense: "any id",

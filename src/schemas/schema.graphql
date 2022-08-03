@@ -1,7 +1,7 @@
 type Query {
   queryByID(id: ID!): Resident
   queryHouseByKey(keyAccess: String!): House
-  listResidentByIdHouse(idHouse: String!): [SummaryResident!]!
+  listResidentByIdHouse(idHouse: String!, currentDate: String ): [SummaryResident!]!
 }
 
 type Resident {
