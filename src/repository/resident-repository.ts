@@ -36,7 +36,8 @@ export default class ResidentRepository
       })
     );
   }
-  list(idHouse: String): Promise<ResidentModel[]> {
+
+  async list(idHouse: String): Promise<ResidentModel[]> {
     return new Promise((resolve) =>
       resolve([
         {

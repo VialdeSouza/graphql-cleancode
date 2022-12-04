@@ -1,9 +1,9 @@
-import { adaptResolver } from "./adapters/adapter-resolver";
+import { adaptControllerToResolver } from "./adapters/adapter-controller-to-resolver";
 import { AddResidentModel } from "./protocols/models/resident-models";
 import { AddResidentController } from "./controllers/resident/add-resident-controller";
 import ResidentRepository from "./repository/resident-repository";
 import { EditResidentController } from "./controllers/resident/edit-resident-controller";
-import { QueryResidentController } from "./controllers/resident/query-resident-controller";
+import { QueryResidentByIdController } from "./controllers/resident/query-id-resident-controller";
 import { AddHouseController } from "./controllers/house/add-house-controller";
 import HouseRepository from "./repository/house-repository";
 import { QueryHouseController } from "./controllers/house/query-house-controller";
@@ -22,7 +22,7 @@ const addResidentController = new AddResidentController(
 const editResidentController = new EditResidentController(
   new ResidentRepository()
 );
-const queryResidentController = new QueryResidentController(
+const queryResidentByIdController = new QueryResidentByIdController(
   new ResidentRepository()
 );
 
@@ -43,21 +43,21 @@ const addExpenseController = new AddExpenseController(
 
 export const resolvers = {
   Query: {
-    queryByID: async (_, id: String) =>
-      adaptResolver(queryResidentController, id),
+    queryResidentByID: async (_, id: String) =>
+      adaptControllerToResolver(queryResidentByIdController, id),
     queryHouseByKey: async (_, { keyAccess }) =>
-      adaptResolver(queryHouseController, keyAccess),
+      adaptControllerToResolver(queryHouseController, keyAccess),
     listResidentByIdHouse: async (_, values: Budget) =>
-      adaptResolver(listResidentsByIdHouse, values),
+      adaptControllerToResolver(listResidentsByIdHouse, values),
   },
   Mutation: {
     createResident: async (_, values: AddResidentModel) =>
-      adaptResolver(addResidentController, values),
+      adaptControllerToResolver(addResidentController, values),
     updateResident: async (_, values: AddResidentModel) =>
-      adaptResolver(editResidentController, values),
+      adaptControllerToResolver(editResidentController, values),
     createHouse: async (_, { nickname }) =>
-      adaptResolver(addHouseController, nickname),
+      adaptControllerToResolver(addHouseController, nickname),
     createExpense: async (_, values: AddExpense) =>
-      adaptResolver(addExpenseController, values),
+      adaptControllerToResolver(addExpenseController, values),
   },
 };
